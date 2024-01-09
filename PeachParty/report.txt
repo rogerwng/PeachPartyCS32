@@ -1,0 +1,12 @@
+Roger Wang
+605515699
+
+1. Control Flow Player and Bank Square
+Detecting of overlap between a Player Avatar and a Bank Square is done in the Bank Square's doSomething() method. In this method, a checkPlayer() function is called from the StudentWorld pointer within all Actors. StudentWorld knows the locations of all its actors, so checks if either player is overlapping with the bank square. It is passed two booleans by reference. The bools are changed to true if a player is overlapping the square. One bool correspondes to each player. After this function call, control is passed back to Bank's doSomething() method, which checks both bools. If either are true, it calls one of StudentWorld's addCoin or clearBank functions depending on whether the player landed on the square or is just simply passing over it. These functions give control to StudentWorld, which uses PlayerAvatar's addCoins method to alter either player's coin count.
+
+2. Missing functionality
+I believe that all functionality was implemented. However, the one issue I was not able to resolve was the Player's actions at a fork. In the current buid of my Peach Party implementation, the player is able to change the avatars direction at a fork, but only by hitting the proper key just before the player reaches the fork. In other words, the program does not stop to wait for the player's direction, and there is only a small window for the player to input a direction before the avatar moves on. I could not find a way to move around this after trying numerous methods including a while loop around this function that kept iterating until a key was called. This approach lead to an infinite loop as the while loop concludes too fast for input to be entered. 
+Other than this caveat, I found no other obvious issues within my program.
+
+3. Assumptions
+None.
